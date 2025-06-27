@@ -14,6 +14,7 @@ const forcaSenha = document.querySelector('.forca');
 
 botoes[0].onclick = diminuiTamanho;
 botoes[1].onclick = aumentaTamanho;
+
 function diminuiTamanho() {
     if (tamanhoSenha > 1) {
         // tamanhoSenha = tamanhoSenha-1;
@@ -32,9 +33,12 @@ function aumentaTamanho() {
 }
 
 
+
 for (i = 0; i < checkbox.length; i++) {
     checkbox[i].onclick = geraSenha;
 }
+
+
 
 geraSenha();
 
@@ -52,6 +56,7 @@ function geraSenha() {
     if (checkbox[3].checked) {
         alfabeto = alfabeto + simbolos;
     }
+
     console.log(alfabeto);
     let senha = '';
     for (let i = 0; i < tamanhoSenha; i++) {
@@ -63,13 +68,15 @@ function geraSenha() {
     classificaSenha();
 }
 function classificaSenha(){
-forcaSenha.classList.remove('fraca','media','forte');   
+forcaSenha.classList.remove('fraca','media','forte');
 
 if (tamanhoSenha > 11){
 forcaSenha.classList.add('forte');
 }
 else if (tamanhoSenha > 5 && tamanhoSenha < 12 ){
 forcaSenha.classList.add('media');
-else if (tamanhoSenha <= 5){}
-forcaSenha.classList.add('forte');
+} else if (tamanhoSenha <= 5){
+
+forcaSenha.classList.add('fraca');
+}
 }
