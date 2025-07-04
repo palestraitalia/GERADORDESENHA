@@ -59,7 +59,7 @@ function geraSenha() {
 
     console.log(alfabeto);
     let senha = '';
-    for (let i = 0; i < tamanhoSenha; i++) {
+    for (let i = 0; i < entropia; i++) {
         let numeroAleatorio = Math.random() * alfabeto.length;
         numeroAleatorio = Math.floor(numeroAleatorio);
         senha = senha + alfabeto[numeroAleatorio];
@@ -68,16 +68,16 @@ function geraSenha() {
     classificaSenha(alfabeto.length);
 }
 function classificaSenha(tamanhoAlfabeto){
-let entropia = tamanhoSenha * Math.log2(tamanhoAlfabeto);
+let entropia = entropia * Math.log2(tamanhoAlfabeto);
 console.log(entropia);
     forcaSenha.classList.remove('fraca','media','forte');
 
-if (tamanhoSenha > 11){
+if (entropia > 11){
 forcaSenha.classList.add('forte');
 }
-else if (tamanhoSenha > 5 && tamanhoSenha < 12 ){
+else if (entropia > 5 && entropia < 12 ){
 forcaSenha.classList.add('media');
-} else if (tamanhoSenha <= 5){
+} else if (entropia <= 5){
 
 forcaSenha.classList.add('fraca');
 }
